@@ -1,0 +1,464 @@
+EXP1)----------------------------------------------------------------------------------
+a=1
+b=2
+c=3
+#UMI 6118028
+
+EXP2)DATA TYPES VARIABLES AND FUNCTIONS-----------------------------------------------------------------
+#INPUT##############3
+name<-readline(prompt="Enter name:")
+age <- readline(prompt="Enter age:")
+#conversion of character to integer################
+age <- as.integer(age)
+print(paste("HELLLO THERE ,",name,"YOUR PRESENT AGE IS ",age,"YEARS OLD."))
+#enter integer#########################
+readinteger<-function()
+{
+  n<-readline(prompt="Enter an integer:")
+  return(as.integer(n))
+}
+print(readinteger())
+#LOGICAL####################
+X=TRUE
+Y=FALSE
+X&Y
+X|Y
+X&X
+Y&Y
+X|Y
+
+
+
+#ARITHMETIC###################3
+X=28
+Y<-"UMI"
+Z<-TRUE
+A=5
+B=5
+A+B
+A-B
+A*B
+A/B
+A^B
+A%%B
+#COMPARISION######################
+
+e<<- 50
+f<<- 100
+e<f
+i=50
+f>i
+e>f
+e==f
+e>=f
+e<=f
+e!=f
+#CALCULATOR WITHOUT FUNCTIONS##################
+print("Select Operation")
+print("1.Add")
+print("2.Substract")
+print("3.Multiply")
+print("4.Divide")
+operation<-as.integer(readline(prompt = "Enter Operation Choice:"))
+num1<-as.integer(readline(prompt = "Enter First Number:"))
+num2<-as.integer(readline(prompt = "Enter Second Number:"))
+calculations<-switch(operation,(num1+num2),(num1-num2),(num1*num2),(num1/num2))
+print(calculations)
+#CALCULATOR WITH FUNCTIONS#####################
+add <- function(x, y) {
+  return(x + y)
+}
+subtract <- function(x, y) {
+  return(x - y)
+}
+multiply <- function(x, y) {
+  return(x * y)
+}
+divide <- function(x, y) {
+  return(x / y)
+}
+# take input from the user
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+choice = as.integer(readline(prompt="Enter choice[1/2/3/4]: "))
+num1 = as.integer(readline(prompt="Enter first number: "))
+num2 = as.integer(readline(prompt="Enter second number: "))
+operator <- switch(choice,"+","-","*","/")
+result <- switch(choice, add(num1, num2), subtract(num1, num2), multiply(num1, num2), divide(num1, num2))
+print(paste(result)) 
+EXP3) VECTORS LIST MATRIX DATA FRAME ARRAY---------------------------------------------------------
+#LISTS
+l1<-list("Mohammad","Umair","6118028","RLAB")
+l1
+l2<-list("Nizaal","Khot")
+l2
+
+a<-list("Dhawan",c("Ganesh"),"Balu")
+a
+
+x<-list("Mohammad","Umair","Rashid",c("UMI"))
+x
+
+z<-list(c("6118028"),"Umi","Umair","Uzair","UMI")
+z
+
+l3=c(l1,l2)
+l3
+#ARRAY######################
+b<-c(5,9,3)
+k<-c(1,2,3,4,5,6)
+a<-array(c(b,k),dim=c(3,3,2))
+print(a)
+
+vector1<-c(100,200,300)
+vector2<-c(10,20,30,40,50,60)
+
+array1<-array(c(vector1,vector2),dim=c(4,4,2))
+print(array1)
+
+vector3<-c(400,500,600)
+vector4<-c(70,80,90,20,30,40)
+
+array2<-array(c(vector3,vector4),dim=c(4,4,2))
+print(array2)
+#matrix###################################
+a<-matrix(c(3:14),nrow=4,byrow=TRUE)
+print(a)
+b<-matrix(c(3:14),nrow=3,)
+print(b)
+ab<-matrix(c(1:12),nrow=3)
+print(ab)
+addition<- b+ab
+print(addition)
+
+multiply<-b*ab
+print(multiply)
+
+m=matrix(c(60,70,80,90),nrow=2,ncol=2)
+m
+sum(m)
+
+w<-cbind(w1=3,w2=c(4:1,2:5))
+rowSums(w)
+colSums(w)
+#vectors######################
+w<-vector(mode="numeric",length=0)
+class(w)
+w<-vector(mode="character",length=0)
+class(w)
+
+v<-c(1)
+v
+
+v<-c(1:6)
+v
+v<-append(0:3,0:5,after=0)
+v
+
+append(v,11,after=10)
+
+Umair<-c(1,2,3,4,5,6)
+
+
+Umair<-c(c(1,2,3),10,20,c(4,5,6))
+Umair
+
+Umair<-c(Umair[1:4],30,40,Umair[5:8])
+Umair
+
+Umair
+Umair[5]
+Umair[3]
+Umair[0]
+
+Umair
+sort(Umair,decreasing = FALSE)
+sort(Umair,decreasing = TRUE)
+
+Rashid<-c("aa","bb","cc","dd")
+Rashid
+Rashid[3]
+Rashid[-3]
+Rashid[0]
+Rashid[10]
+
+Rashid
+Rashid[2]=20
+Rashid[3]=30
+Rashid[4]=40
+Rashid[1]=10
+Rashid
+#seq and rep
+seq(from=1,to=10)
+
+x<-rep(1,6)
+x
+
+seq(from=1,to=20,by=2)
+
+rep(seq(from=1,to=20,by=2),each=3,2)
+
+rep(1:4,c(3,2,1,4))
+exp4) factors nd data frames---------------------------------------------------------------
+#factors#######################
+d<-c("a","b","c","d","e","f","g")
+print(d)
+
+print(is.factor(d))
+
+changetofactor<-factor(d)
+print(changetofactor)
+
+d2<-c("a","b","c","d","e","f","g","a","b","c","d")
+changefactor<-factor(d2)
+print(changefactor)
+print(changefactor[3])
+print(changefactor[c(3,5)])
+print(changefactor[-3])
+
+changefactor[4]<-"g"
+print(changefactor)
+
+changefactor[4]<-"w"
+print(changefactor)
+
+factor<-gl(2,4, labels=c("Mohammad","Umair"))
+print(factor)
+#data frames#############################
+roll<-c(1,2,3,4,5,6)
+seat<-c(10,20,30,40,50,60)
+names<-c("a","b","c","a","b","c")
+input<-data.frame(roll,seat,names)
+print(input)
+
+print(is.factor(input$names))
+print(input$names)
+m<-c(1,2,3,4)
+n<-c(10,20,30,40)
+o<-c(100,200,300,400)
+dataframe1<-data.frame(m,n,o)
+dataframe1
+
+student<-data.frame(id=c(1:3),names=c("a","b","c"),grade=c(65,70,75))
+print(student)
+
+nrow(student)
+ncol(student)
+
+df<-stack(dataframe1)
+df
+
+names(student)
+colnames(student)
+rownames(student)
+str(student)
+
+binding<-rbind(dataframe1,dataframe1)
+binding
+
+head(dataframe1,2)
+tail(dataframe1,2)
+
+dataframe1[3,]
+dataframe1[,3]
+
+t(dataframe1)
+
+View(dataframe1)
+exp5)loops and conditions---------------------------------------------------------------------
+#vector from 1-100
+n<-seq(100)
+print(n)
+#even nd odd
+v1<-vector()
+v2<-vector()
+input=as.integer(readline(prompt="1.Print the Even Numbers; 2.Print the Odd Numbers; Enter your Choice: "))
+switch(input,even(),odd())
+#even
+even<-function()
+{
+  for(i in n)
+  {
+    if(i%%2==0)
+    {
+      v2<-c(v2,i)
+    }
+  }
+  print(v2)
+}
+#odd
+odd<-function()
+{
+  for(i in n)
+  {
+    if(i%%2!=0)
+    {
+      v1<-c(v1,i)
+    }
+  }
+  print(v1)
+}
+
+
+#AREA OF CIRCLE
+
+radius<-c(5,6,7,8,9)
+area=vector()
+
+circle<-function(){
+  for(i in radius)
+  {
+    b=3.14*i*i
+    area<-c(area,b)
+  }
+  print(area)
+}
+circle()
+
+
+#Vector Containing Names and Print with While Loop
+
+name<-c("Umair","Nizaal","Ganesh","Uzma","Ruzaad","Ghazala","Nida")
+c=1
+while (c<=7) {
+  print(name[c])
+  c=c+1
+}
+
+#Data Frame Student Marks Code using repeat
+student<-data.frame(id=c(1:8),
+name=c("Umair","Nizaal","Ganesh","Uzma","Ruzaad","Ghazala","Nida","Misbah"),
+marks=c(90,93,95,83,89,97,98,81))
+student
+
+x=1
+repeat{
+  print(student[x,])
+  x=x+1
+  if(x>7)
+  {
+    break
+  }
+}
+
+#Apply Function
+r<-matrix(c(11:30),nrow=5,byrow=FALSE)
+r
+sr<-vector()
+sr<-apply(r,2,sum)
+sr
+sc=vector()
+sc<-apply(r,1,sum)
+sc
+
+#Find Maximum in Each Row by matrix
+m1<-matrix(c(1:10,-10:-1,11:20,-1:-10,1:10,9:0),nrow=10,byrow=FALSE)
+print(m1)
+#for loop and apply
+maxm1=vector()
+maxm1<-apply(m1,1,max)
+maxm1
+
+maxm2=vector()
+for(i in 1:nrow(m1))
+{
+  maxm2=c(maxm2,i)
+  max(maxm2)
+}
+print(maxm2)
+
+#apply to find mean of rows and cols
+meanof=vector()
+meanof<-apply(m1,2,mean)
+meanof
+#apply to find sum of rows and cols
+sumrow=vector()
+sumrow<-apply(m1,1,sum)
+sumrow
+
+sumcol=vector()
+sumcol<-apply(m1,2,sum)
+sumcol
+
+#lapply and sapply
+
+dataf=data.frame(a=1:5,b=11:15,c=21:25,d=LETTERS[1:5])
+dataf
+
+meanl=vector()
+meanl=lapply(dataf[1:3],MARGIN=2,FUN=mean)
+meanl
+
+means=vector()
+means=sapply(dataf[1:3],MARGIN=2,FUN=mean)
+means
+
+# to find no of chars in vector using lapply sapply
+name=c("Umair","Nizaal","Ganesh","Uzma","Ruzaad","Ghazala")
+name
+
+lapply(X=name,FUN=nchar)
+sapply(X=name,FUN=nchar)
+
+
+#Student Grades avg using lap sap
+
+student<-data.frame(id=c(1:6),
+                    name=c("Umair","Nizaal","Ganesh","Uzma","Ruzaad","Ghazala"),
+                    age=c(21,22,23,20,18,19),
+                    marks=c(95,97,80,92,94,65))
+student
+
+means=sapply(student[3,4], mean)
+means
+means=sapply(student[3], mean)
+means
+meangrade=sapply(student[4], mean)
+meangrade
+exp 7) aggregrate nd merge in table --------------------------------------------
+install.packages("readxl")
+library(readxl)
+data1<-read_excel("C:/Users/")
+View(data1)
+data2<-read_excel("C:/Users/")
+View(data2)
+str(data1)
+str(data2)
+aggregate(weightKg~age,data=data2,FUN=mean)
+aggregate(weightKg~age,data2,mean)
+tapply(data2$weightKg,data2$age,mean)
+aggregate(weightKg~age+heightCm,data2,mean)
+aggregate(cbind(weightKg,heightCm)~age,data2,mean)
+merge(x=data1,y=data2,by.x="id",by.y="id")
+merge(x=data1,y=data2,by="id")
+merge(x=data1,y=data2,by="id" ,all=TRUE)
+merge(x=data1,y=data2,by="id" ,all.x=TRUE)
+merge(x=data1,y=data2,by="id" ,all.y =TRUE)
+exp 8)visualisation using ggplot --------------------------------------
+library(ggplot2)
+cereal<-read.csv("C:/Users/Nazish/Downloads/cereal.csv")
+weight<-cereal$weight
+calories<-cereal$calories
+ggplot(date=cereal,mapping=aes(x=weight,y=calories))
+ggplot(date=cereal,mapping=aes(x=weight,y=calories))+geom_point()
+install.packages("tidyverse")
+library(tidyverse)
+View(cereal)
+plot(cereal$protein,cereal$sodium)
+ggplot(data=cereal)+geom_point(mapping=aes(x=weight,y=calories))
+vitamins=cereal$vitamins
+mfr<-cereal$mfr
+ggplot(data=cereal,mapping=aes(x=mfr,y=calories))+geom_boxplot()
+ggplot(data=cereal,mapping=aes(x=mfr,y=calories))+geom_boxplot(alpha=0)+
+geom_jitter(alpha=0.3,color="purple")
+ggplot(data=cereal,aes(x=sodium,y=rating,color=mfr))+geom_line()
+ggplot(cereal, aes(x=sodium)) + geom_histogram()
+ggplot(cereal, aes(x=sodium)) + geom_histogram(binwidth=1)
+p<-ggplot(cereal, aes(x=sodium)) +geom_histogram(color="black", fill="purple") 
+p
+
+
+
